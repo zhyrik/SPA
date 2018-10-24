@@ -13,12 +13,18 @@ import {
   VIcon,
   VGrid,
   VToolbar,
+  VCard,
+  VImg,
+  VTooltip,
+  VForm,
+  VTextField,
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
 Vue.use(Vuetify, {
   components: {
+    Vuetify,
     VApp,
     VNavigationDrawer,
     VFooter,
@@ -27,10 +33,15 @@ Vue.use(Vuetify, {
     VIcon,
     VGrid,
     VToolbar,
+    VCard,
+    VImg,
+    VTooltip,
+    VForm,
+    VTextField,
     transitions
   },
   theme: {
-    primary: '#ee44aa',
+    primary: '#CDDC39',
     secondary: '#424242',
     accent: '#82B1FF',
     error: '#FF5252',
