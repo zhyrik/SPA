@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-container fluid>
-      <v-layout>
-        <v-flex>
+      <v-layout row>
+        <v-flex xs12>
           <v-carousel>
             <v-carousel-item
               v-for="(item) in books"
