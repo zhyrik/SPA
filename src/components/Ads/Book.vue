@@ -4,12 +4,12 @@
       <v-flex xs12>
         <v-card>
           <v-card-media
-            src="https://www.drawingnow.com/file/videos/steps/119657/how-to-draw-an-open-book-step-7.jpg"
+            :src="book.image"
             height="300"
           ></v-card-media>
           <v-card-text>
-            <h1>lorem</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, tenetur porro maxime repudiandae quia quis, sint rem molestias minus itaque aliquid natus animi ipsam recusandae cupiditate in voluptas magnam atque.</p>
+            <h1>{{book.title}}</h1>
+            <p>{{book.description}}</p>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -24,9 +24,12 @@
 
 <script>
 export default {
-  data () {
-    return {
-
+  props: ['id'],
+  computed: {
+    book () {
+      const id = this.id
+      console.log(id)
+      return this.$store.getters.BooksById(id)
     }
   }
 }

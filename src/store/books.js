@@ -44,6 +44,9 @@ export default {
     },
     myBooks (state) {
       return state.books
+    },
+    bookById (state) {
+      return bookId => state.books.find(book => book.id === bookId)
     }
   }
 }

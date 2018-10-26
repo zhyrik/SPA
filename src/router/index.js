@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
-import Ad from '@/components/Ads/Add'
+import Book from '@/components/Ads/Book'
 import AddList from '@/components/Ads/AdList'
 import NewAdd from '@/components/Ads/NewAdd'
 import Orders from '@/components/User/Orders'
@@ -28,9 +28,10 @@ export default new Router({
       component: Registration
     },
     {
-      path: '/ad:id',
-      name: 'ad',
-      component: Ad
+      path: '/book/:id',
+      name: 'book',
+      props: true,
+      component: Book
     },
     {
       path: '/list',

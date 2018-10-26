@@ -22,7 +22,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn class="info" :to="'/ad' + item.id">Open</v-btn>
+                <v-btn class="info" :to="'/ad/' + item.id">Open</v-btn>
               </v-card-actions>
             </v-flex>
           </v-layout>
