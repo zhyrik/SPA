@@ -2,10 +2,10 @@
   <v-container>
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
-        <h1 class="text--secondary mb-3">My Ads</h1>
+        <h1 class="text--secondary mb-3">My Books</h1>
 
         <v-card class="elevation-10 mb-3"
-          v-for="item in ads"
+          v-for="item in myBooks"
           :key="item.id"
         >
           <v-layout row>
@@ -34,17 +34,9 @@
 
 <script>
 export default {
-  data () {
-    return {
-      ads: [
-        {
-          title: 'book1',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia laudantium inventore, cupiditate nisi suscipit commodi voluptatem explicabo aliquam. Cumque aperiam alias tempore porro? Quasi accusamus tempora explicabo. Excepturi, laboriosam quisquam!',
-          promo: true,
-          image: 'https://www.drawingnow.com/file/videos/steps/119657/how-to-draw-an-open-book-step-7.jpg',
-          id: 120
-        }
-      ]
+  computed: {
+    myBooks () {
+      return this.$store.getters.myBooks
     }
   }
 }

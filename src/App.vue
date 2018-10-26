@@ -64,8 +64,8 @@ export default {
         {title: 'Login', icon: 'lock', url: '/login'},
         {title: 'Registration', icon: 'face', url: '/registration'},
         {title: 'Orders', icon: 'bookmark_border', url: '/orders'},
-        {title: 'New add', icon: 'note_add', url: '/new'},
-        {title: 'My add', icon: 'list', url: '/list'}
+        {title: 'New book', icon: 'note_add', url: '/new'},
+        {title: 'My book', icon: 'list', url: '/list'}
       ]
     }
   },

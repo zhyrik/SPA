@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
-import Add from '@/components/Ads/Add'
+import Ad from '@/components/Ads/Add'
 import AddList from '@/components/Ads/AdList'
 import NewAdd from '@/components/Ads/NewAdd'
 import Orders from '@/components/User/Orders'
@@ -28,9 +28,9 @@ export default new Router({
       component: Registration
     },
     {
-      path: '/add:id',
-      name: 'add',
-      component: Add
+      path: '/ad:id',
+      name: 'ad',
+      component: Ad
     },
     {
       path: '/list',
