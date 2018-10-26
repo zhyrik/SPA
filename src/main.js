@@ -21,6 +21,8 @@ import {
   VCarousel,
   VCheckbox,
   VSubheader,
+  VSwitch,
+  VTextarea,
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
@@ -44,6 +46,8 @@ Vue.use(Vuetify, {
     VCarousel,
     VCheckbox,
     VSubheader,
+    VSwitch,
+    VTextarea,
     transitions
   },
   theme: {

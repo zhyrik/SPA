@@ -13,15 +13,14 @@
             :rules="[v => !!v || 'Title is required']"
             v-model="title"
           ></v-text-field>
-          <v-text-field
+          <v-textarea
             id="description"
             name="description"
             label="Description"
             type="text"
             :rules="[v => !!v || 'Description is required']"
-            multi-line
             v-model="description"
-          ></v-text-field>
+          ></v-textarea>
         </v-form>
 
         <v-layout row>
@@ -34,14 +33,23 @@
             <img src="https://www.drawingnow.com/file/videos/steps/119657/how-to-draw-an-open-book-step-7.jpg" height="200">
           </v-flex>
         </v-layout>
+
         <v-layout row>
           <v-flex xs12>
             <v-switch
               label="Add to promo?"
               v-model="promo"
+              color="primary"
             ></v-switch>
           </v-flex>
         </v-layout>
+
+        <v-layout align-center justify-end row>
+          <v-flex xs12 style="display: flex; justify-content: flex-end;">
+            <v-btn class="primary" @click="createAd" >Create ad</v-btn>
+          </v-flex>
+        </v-layout>
+
       </v-flex>
     </v-layout>
   </v-container>
@@ -51,8 +59,27 @@
 export default {
   data () {
     return {
-      promo: ''
+      title: '',
+      description: '',
+      valid: false,
+      promo: false
+    }
+  },
+  methods: {
+    createAd () {
+      if (this.$refs.form.validate()) {
+        const ad = {
+          title: this.title,
+          description: this.description,
+          promo: this.promo
+        }
+        console.log(ad)
+      }
     }
   }
 }
 </script>
+
+<style scoped>
+
+</style>
