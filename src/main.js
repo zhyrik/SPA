@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import * as fb from 'firebase'
 import {
   Vuetify,
   VApp,
@@ -70,5 +71,15 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  created() {
+    fb.initializeApp({
+      apiKey: "AIzaSyBrVqWb-kAaeyXD2BM-wUBUnVooxbRRE-U",
+      authDomain: "my-vue-project-b16ed.firebaseapp.com",
+      databaseURL: "https://my-vue-project-b16ed.firebaseio.com",
+      projectId: "my-vue-project-b16ed",
+      storageBucket: "my-vue-project-b16ed.appspot.com",
+      messagingSenderId: "308678990078"
+    })
+  },
 })
