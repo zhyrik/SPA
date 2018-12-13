@@ -25,6 +25,7 @@ import {
   VSubheader,
   VSwitch,
   VTextarea,
+  VSnackbar,
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
@@ -50,6 +51,7 @@ Vue.use(Vuetify, {
     VSubheader,
     VSwitch,
     VTextarea,
+    VSnackbar,
     transitions
   },
   theme: {
@@ -72,14 +74,14 @@ new Vue({
   store,
   components: { App },
   template: '<App/>',
-  created() {
+  created () {
     fb.initializeApp({
-      apiKey: "AIzaSyBrVqWb-kAaeyXD2BM-wUBUnVooxbRRE-U",
-      authDomain: "my-vue-project-b16ed.firebaseapp.com",
-      databaseURL: "https://my-vue-project-b16ed.firebaseio.com",
-      projectId: "my-vue-project-b16ed",
-      storageBucket: "my-vue-project-b16ed.appspot.com",
-      messagingSenderId: "308678990078"
+      apiKey: 'AIzaSyBrVqWb-kAaeyXD2BM-wUBUnVooxbRRE-U',
+      authDomain: 'my-vue-project-b16ed.firebaseapp.com',
+      databaseURL: 'https://my-vue-project-b16ed.firebaseio.com',
+      projectId: 'my-vue-project-b16ed',
+      storageBucket: 'my-vue-project-b16ed.appspot.com',
+      messagingSenderId: '308678990078'
     })
-  },
+  }
 })

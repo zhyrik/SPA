@@ -52,6 +52,25 @@
         <router-view></router-view>
       </v-container>
     </v-content>
+
+    <template v-if="error">
+      <v-snackbar
+        color="error"
+        :multi-line="true"
+        :timeout="5000"
+        @input="closeError"
+        :value="true"
+      >
+        {{ error }}
+        <v-btn
+          color="lime"
+          @click="closeError"
+        >
+          Close
+        </v-btn>
+      </v-snackbar>
+    </template>
+
   </v-app>
 </template>
 
@@ -59,14 +78,33 @@
 export default {
   data () {
     return {
-      drawer: false,
-      items: [
+      drawer: false
+    }
+  },
+  computed: {
+    error () {
+      return this.$store.getters.error
+    },
+    isUserLogin () {
+      return this.$store.getters.isUserLogin
+    },
+    items () {
+      if (this.isUserLogin) {
+        return [
+          {title: 'Orders', icon: 'bookmark_border', url: '/orders'},
+          {title: 'New book', icon: 'note_add', url: '/new'},
+          {title: 'My book', icon: 'list', url: '/list'}
+        ]
+      }
+      return [
         {title: 'Login', icon: 'lock', url: '/login'},
-        {title: 'Registration', icon: 'face', url: '/registration'},
-        {title: 'Orders', icon: 'bookmark_border', url: '/orders'},
-        {title: 'New book', icon: 'note_add', url: '/new'},
-        {title: 'My book', icon: 'list', url: '/list'}
+        {title: 'Registration', icon: 'face', url: '/registration'}
       ]
+    }
+  },
+  methods: {
+    closeError () {
+      this.$store.dispatch('clearError')
     }
   },
   name: 'App'
