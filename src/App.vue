@@ -17,6 +17,7 @@
           :key="item.title"
           avatar
           :to="item.url"
+          @click="exit(item.exit)"
         >
           <v-list-tile-action>
             <v-icon v-if="item.icon" color="lime">{{item.icon}}</v-icon>
@@ -38,7 +39,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="item in items" :key="item.title" :to="item.url">
+        <v-btn flat v-for="item in items" :key="item.title" :to="item.url" @click="exit(item.exit)">
           <v-icon left>{{item.icon}}</v-icon>
           {{item.title}}
         </v-btn>
@@ -93,7 +94,8 @@ export default {
         return [
           {title: 'Orders', icon: 'bookmark_border', url: '/orders'},
           {title: 'New book', icon: 'note_add', url: '/new'},
-          {title: 'My book', icon: 'list', url: '/list'}
+          {title: 'My book', icon: 'list', url: '/list'},
+          {title: 'Exit', icon: 'exit_to_app', url: '/', exit: true}
         ]
       }
       return [
@@ -105,6 +107,11 @@ export default {
   methods: {
     closeError () {
       this.$store.dispatch('clearError')
+    },
+    exit (flag) {
+      if (flag) {
+        this.$store.dispatch('exit')
+      }
     }
   },
   name: 'App'
