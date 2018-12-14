@@ -8,6 +8,8 @@ import AddList from '@/components/Ads/AdList'
 import NewAdd from '@/components/Ads/NewAdd'
 import Orders from '@/components/User/Orders'
 
+import AuthGvard from './authGvard'
+
 Vue.use(Router)
 
 export default new Router({
@@ -36,17 +38,20 @@ export default new Router({
     {
       path: '/list',
       name: 'list',
-      component: AddList
+      component: AddList,
+      beforeEnter: AuthGvard
     },
     {
       path: '/new',
       name: 'new',
-      component: NewAdd
+      component: NewAdd,
+      beforeEnter: AuthGvard
     },
     {
       path: '/orders',
       name: 'orders',
-      component: Orders
+      component: Orders,
+      beforeEnter: AuthGvard
     }
   ],
   mode: 'history'

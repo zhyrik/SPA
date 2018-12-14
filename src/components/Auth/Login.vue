@@ -78,6 +78,11 @@ export default {
     loading () {
       return this.$store.getters.loading
     }
+  },
+  created () {
+    if (this.$route.query['LoginError']) {
+      this.$store.dispatch('setError', 'Please log in!')
+    }
   }
 }
 </script>
